@@ -33,7 +33,13 @@
 <br> <br>
 </div>
 <br> <br>
-
+<body>
+  <div class="gallerycontainer">
+    <div class = "slideshow-container">
+      
+    </div>
+  </div>
+</body>
 
 
 
@@ -46,27 +52,47 @@
 
     <div class="mySlides fade">
 
-      <img src="file:///Users/gagan/Desktop/Anmol_Aman_Gagan_Explore_The_World_FP/images/hotel.6.jpg" style="width:100%; height: 650px;">
+      <img src='images/hotel.6.jpg' style="width:100%; height: 650px;">
 
     </div>
 
     <div class="mySlides fade">
 
-      <img src="file:///Users/gagan/Desktop/Anmol_Aman_Gagan_Explore_The_World_FP/images/hotel.2.jpeg"  alt =""style="width:100%; height: 650px;">
+      <img src='images/hotel.5.jpg'  alt =""style="width:100%; height: 650px;">
 
     </div>
 
     <div class="mySlides fade">
 
-      <img src="file:///Users/gagan/Desktop/Anmol_Aman_Gagan_Explore_The_World_FP/images/hotel.3.jpg" style="width:100%; height: 650px;">
+      <img src='images/hotel.3.jpg'style="width:100%; height: 650px;">
 
     </div>
 
     <div class="mySlides fade">
 
-      <img src="file:///Users/gagan/Desktop/Anmol_Aman_Gagan_Explore_The_World_FP/images/hotel.4.jpeg" style="width:100%; height: 650px;">
+      <img src='images/c.jpg' style="width:100%; height: 650px;">
 
     </div>
+    <div class="mySlides fade">
+
+      <img src='images/back1.jpg'style="width:100%; height: 650px;">
+
+    </div>
+
+    </div>
+    <br>
+
+    <div class="slidedots" style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+
+
+  </div>
 <div class="desktop">
 
 
@@ -147,6 +173,49 @@ navbar.classList.remove("sticky");
 }
 
   </script>
+
+
+<script  >
+
+
+
+
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 4000); // Change image every 2 seconds
+  }
+
+  window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("nav2");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+if (window.pageYOffset >= sticky) {
+navbar.classList.add("sticky")
+} else {
+navbar.classList.remove("sticky");
+}
+}</script>
 <body>
     <footer>
         &copy;copyright 2020. All Rights Reserved. <br> 
