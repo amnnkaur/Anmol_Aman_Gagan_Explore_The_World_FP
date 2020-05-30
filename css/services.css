@@ -1,9 +1,5 @@
-html,body{
-    padding : 10px,0px,0px,0px;
-    margin :0;
 
-}
-.gallerycontainer{
+.destop{
     width: 100%;
     height: 500px;
     max-width:100px;
@@ -12,4 +8,11 @@ html,body{
     padding: 10px;
     box-sizing: border-box;
     margin: 0 auto;
+}
+.destop .slideshow-container{
+    width:100%;
+    height: 90%;
+    overflow:hidden;
+    background-color: gainsboro;
+    position:relative;
 }
