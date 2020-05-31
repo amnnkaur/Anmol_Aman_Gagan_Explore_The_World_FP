@@ -459,6 +459,11 @@ footer a {
   background: #444;
   position: relative;
   overflow: hidden;
+  max-width: 70%;
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.05em; 
 }
 
 .box img {
@@ -690,7 +695,7 @@ footer a {
     }
 
     .column {
-        display: contents;
+        display: table;
     }
     
     footer a {
