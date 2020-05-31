@@ -115,6 +115,70 @@
         text-align: left;
       }
     }
+    .para1{
+  padding-top: 2em;
+  clear: both;
+  /* float: left; */
+  width: 100%;
+  border-radius: 0 5em 5em 5em;
+  box-shadow: 1em 1em 1em #4c4f4d;
+}
+.para1 h2 {
+  text-align: center;
+  color: white;
+}
+.para1 p {
+  text-align: center;
+  font-size: 1.5em;
+    color: White;
+}
+.textoverimage2{
+  clear: both;
+  flex: 33.33%;
+  padding: 5px;
+  position: relative;
+  height: 250px;
+
+  /* float: left; */
+  margin: 4px;
+  background-size: 100%;
+  background-position: center;
+  transition: 0.5s;
+
+}
+.textoverimage2:hover{
+  background-size: 110%;
+
+
+}
+.textoverimage2:after {
+  position: absolute;
+  top:87%;
+  bottom: 0;
+  right:0;
+ white-space: pre-wrap;
+overflow: hidden;
+background-color: rgba(0,0,0,0.3);
+color: #fff;
+padding: 0.8px;
+
+  content: attr(data-text);
+  transition: 0.5s;
+}
+.textoverimage2:hover:after {
+
+  top:0;
+  padding: 8px;
+  background-color: rgba(0,0,0,0.6);
+
+}
+.textoverimage2:first-line {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5em;
+
+
+}
     /* footer */
 .s-m {
     position: absolute;
@@ -224,7 +288,21 @@
     <!-- Nav Bar -->
     <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
     <main>
-
+      <div class=""></div>
+      <div class="para1">
+        <h2>Book your Ride</h2>
+        <p>When you get there, <br>we’ll be waiting for you</p>
+      
+      </div>
+      <a href="carbooking.html"><div class="textoverimage2"
+        style="background-image: url('service3.jpg');"
+        data-text=" International Car Rental
+        Ready for a road trip? We've got you covered at Travelocity. Whether you're looking for the cheapest rates, best gas mileage or perhaps a swanky ride for a romantic weekend, we have the wheels you want. Hit the road with confidence as you explore Canada in any of the top rental companies, knowing you're getting the best cars for your dollar.
+        Sometimes when you travel, you wanna skip the trains and buses. We understand! That's why Travelocity offers the best deals so you can get off the beaten path in the country of your choice. Enjoy the freedom of four wheels while abroad and get the most out of your vacation with incredible deals on car rentals all over the world.
+        
+        When you're looking to head south for a trip, renting a car in the U.S. is a great bet. And thanks to the deals on Travelocity.ca, you can find the wheels to fit your budget for a trip down the U.S. highways. Grab your atlas, a pair of shades and head down the Atlantic or Pacific coasts without making a dent in your travel budget. No matter where you drive in the U.S., you'll be making incredible memories.">
+        <!-- <img src="images/backlogin.jpeg" alt="sdfghjj" > -->
+        
     </main>
     <footer>
         &copy;copyright 2020. All Rights Reserved. <br> 
