@@ -464,6 +464,7 @@ footer a {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0.05em; 
+  min-width: 25%;
 }
 
 .box img {
@@ -655,6 +656,10 @@ footer a {
         text-decoration: none;
         color: #fafafa;
     }
+    .column {
+      display: table;
+  }
+  
 }
 
 @media only screen and (min-width:884px) {
