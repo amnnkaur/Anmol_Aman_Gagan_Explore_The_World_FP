@@ -465,6 +465,7 @@ footer a {
   margin-right: auto;
   margin-bottom: 0.05em; 
   min-width: 25%;
+  border-radius: 2em;
 }
 
 .box img {
