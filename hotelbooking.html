@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/hotelbooking.css">
+    <link rel="stylesheet" href="css/services.css">
+
     <title>Explore The World</title>
     <script src="https://kit.fontawesome.com/92fa2537c2.js"></script>
   
@@ -142,6 +144,12 @@
           <a href="about.html">About</a>
           <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
+
+        <main>
+         
+            
+
+
         <script>
           function myFunction() {
             var x = document.getElementById("myTopnav");
@@ -156,7 +164,102 @@
     <!-- Nav Bar -->
     <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
     <main>
-
+      <div class="desktop">
+        
+        
+        <div class="slideshow-container">
+    
+        <div class="mySlides fade">
+    
+          <img src='images/hotel.6.jpg' style="width:100%; height: 650px;">
+    
+        </div>
+    
+        <div class="mySlides fade">
+    
+          <img src='images/hotel.5.jpg'  alt =""style="width:100%; height: 650px;">
+    
+        </div>
+    
+        <div class="mySlides fade">
+    
+          <img src='images/hotel.3.jpg'style="width:100%; height: 650px;">
+    
+        </div>
+    
+        <div class="mySlides fade">
+    
+          <img src='images/c.jpg' style="width:100%; height: 650px;">
+    
+        </div>
+        <div class="mySlides fade">
+    
+          <img src='images/back1.jpg'style="width:100%; height: 650px;">
+    
+        </div>
+    
+        </div>
+        <br>
+    
+        <div class="slidedots" style="text-align:center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+    
+    
+    
+      </div>
+    
+    </div>
+    </div>
+    
+     
+    
+    <script  >
+    
+    
+    
+    
+      var slideIndex = 0;
+      showSlides();
+    
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 4000); // Change image every 2 seconds
+      }
+    
+      window.onscroll = function() {myFunction()};
+    
+    // Get the navbar
+    var navbar = document.getElementById("nav2");
+    
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetTop;
+    
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+    if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+    } else {
+    navbar.classList.remove("sticky");
+    }
+    }</script>
+    <body>
     </main>
     <footer>
         &copy;copyright 2020. All Rights Reserved. <br> 
