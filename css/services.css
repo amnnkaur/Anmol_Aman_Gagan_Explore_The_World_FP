@@ -16,6 +16,50 @@
     background-color: gainsboro;
     position:relative;
 }
+.ticketsDetails{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+  }
+
+  .ticketsDetails label{
+    font-size: 1.5em;
+    font-style: oblique;
+    font-weight: bolder;
+    color: #ffffff;
+    text-shadow: #000000;
+  }
+  .ticketsDetails input{
+    font-size: 1em;
+    border-radius: 0.5em 0.5em;
+  }
+  .ticketsDetails button{
+    position: absolute;
+    /* top: 50%; */
+  margin-left: 40%;
+    font-size: 1.5em;
+    border-radius: 0.5em 0.5em;
+  }
+  .para1{
+
+    float: left;
+    width: 33%;
+    border-radius: 0 5em 5em 5em;
+    box-shadow: 1em 1em 1em #4c4f4d;
+  }
+  .para1 h2 {
+    text-align: center;
+  }
+  .para1 p {
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+
+
+
+
+
 /* footer */
 .s-m {
     position: absolute;
