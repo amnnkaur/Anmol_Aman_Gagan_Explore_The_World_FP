@@ -229,18 +229,18 @@
     <header class="text-orange">Login Form</header>
     <form>
 <div class="input-field">
-    <input type="text" required>
+    <input type="text" required id="userName">
     <label>Email or Username</label>
   </div>
 <div class="input-field">
-    <input class="pswrd" type="password" required>
+    <input class="pswrd" type="password" required id="password"> 
     <span class="show">SHOW</span>
     <label>Password</label>
   </div>
 <div class="button">
     <div class="inner">
 </div>
-<button id="loginBtn" onclick="onLoginPressed()">LOGIN</button>
+<button id="loginBtn" onclick="onLoginPressed(document.getElementById('userName').value , document.getElementById('password').value)">LOGIN</button>
   </div>
 </form>
 <div class="auth text-orange">
