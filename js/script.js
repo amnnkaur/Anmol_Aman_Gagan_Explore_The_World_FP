@@ -40,7 +40,7 @@ openRequest.onsuccess = function() {
 }
 
 function registerUser(){
-    alert('signup')
+    // alert('signup')
   let firstname = document.getElementById('name').value;
   let lastname = document.getElementById('userName').value;
   let pass = document.getElementById('password').value;
@@ -124,11 +124,11 @@ openRequest.onblocked = function() {
 
 function userlogIn(){
 
-  let uname = document.getElementById('username').value;
-  let p = document.getElementById('upassword').value;
+  let userName = document.getElementById('userName').value;
+  let p = document.getElementById('password').value;
 
 
-  if(uname == "" & p == ""){
+  if(userName == "" & p == ""){
     alert("Please fill the required feilds....")
   }else {
 
@@ -164,19 +164,19 @@ function userlogIn(){
          let t = transaction.objectStore("userdata");
 
 
-         let req = t.get(uname)
+         let req = t.get(userName)
 
 
          req.onsuccess = function() {
             console.log(req.result)
             var recieved = req.result
-            alert(recieved.password)
             if(recieved == null){
               alert("User not registered!!!!")
             }else if (p == recieved.password) {
 
-
-               saveLoginUser(uname);
+                alert("Welcome " + recieved.name +" !!")
+                // document.getElementById('replace').innerHTML = '<p>'+recieved.name+'</p>'
+               saveLoginUser(userName);
 
             }else {
               alert("Oops!!!  Wrong password")
@@ -198,7 +198,7 @@ function userlogIn(){
 }
 
 
-function saveLoginUser(uname){
+function saveLoginUser(userName){
 
 
 let openRequest = indexedDB.open("exploreTheWorldDb", 1);
@@ -228,7 +228,7 @@ openRequest.onsuccess = function() {
    let transaction = db.transaction("userdata", "readwrite");
    let t = transaction.objectStore("userdata");
 
-   let r = t.put({id: "logInUser", username: uname});
+   let r = t.put({id: "logInUser", username: userName});
 
    r.onsuccess = function(){
 
