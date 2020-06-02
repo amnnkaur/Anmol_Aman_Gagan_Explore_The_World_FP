@@ -1,4 +1,8 @@
 
+//signUp Window
+function signUp(){
+    window.open("js/signup.html", "_blank", "width:200 , height:360")
+}
 
 createObjectStores();
 
