@@ -40,9 +40,10 @@ openRequest.onsuccess = function() {
 }
 
 function registerUser(){
-  let firstname = document.getElementById('fname').value;
-  let lastname = document.getElementById('lname').value;
-  let pass = document.getElementById('passwordsignup').value;
+    alert('signup')
+  let firstname = document.getElementById('name').value;
+  let lastname = document.getElementById('userName').value;
+  let pass = document.getElementById('password').value;
 
   if(firstname == "" & lastname == "" & pass == ""){
     alert("Please fill the required fields..");
@@ -50,7 +51,7 @@ function registerUser(){
 
 
 
-  let openRequest = indexedDB.open("DB_traveldatabase", 1);
+  let openRequest = indexedDB.open("exploreTheWorldDb", 1);
   openRequest.onupgradeneeded = function() {
      console.log("upgrade called")
   };
@@ -123,7 +124,7 @@ function userlogIn(){
 
 
 
-  let openRequest = indexedDB.open("DB_traveldatabase", 1);
+  let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
    openRequest.onupgradeneeded = function() {
        console.log("upgrade called")
@@ -190,7 +191,7 @@ function userlogIn(){
 function saveLoginUser(uname){
 
 
-let openRequest = indexedDB.open("DB_traveldatabase", 1);
+let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 openRequest.onupgradeneeded = function() {
 
   console.log("upgrade called")
@@ -241,7 +242,7 @@ function bookhotelfunc(){
 
 
 
-   let openRequest = indexedDB.open("DB_traveldatabase", 1);
+   let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
       openRequest.onupgradeneeded = function() {
 
@@ -351,7 +352,7 @@ function bookcarfunc(){
 
 
 
-   let openRequest = indexedDB.open("DB_traveldatabase", 1);
+   let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
       openRequest.onupgradeneeded = function() {
 
@@ -458,7 +459,7 @@ function bookairlinefunc(){
 
 
 
-   let openRequest = indexedDB.open("DB_traveldatabase", 1);
+   let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
       openRequest.onupgradeneeded = function() {
 
@@ -564,7 +565,7 @@ function bookairlinefunc(){
 function showmylist(){
 
 
-     let openRequest = indexedDB.open("DB_traveldatabase", 1);
+     let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
         openRequest.onupgradeneeded = function() {
 
