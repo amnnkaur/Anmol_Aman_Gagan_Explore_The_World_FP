@@ -1,0 +1,26 @@
+.carDetails{
+    height: 200px;
+    border-style: dotted;
+  }
+  .form {
+    margin-top: 20px;
+    margin-left: 2em;
+  }
+  .carDetails label{
+    font-size: 1.5em;
+    font-style: oblique;
+    font-weight: bolder;
+    color: Black;
+    text-shadow: #000000;
+  }
+  .carDetails input{
+    font-size: 1em;
+    border-radius: 0.5em 0.5em;
+  }
+  .carDetails button{
+    position: absolute;
+    /* top: 50%; */
+    left: 40%;
+    font-size: 1.5em;
+    border-radius: 0.5em 0.5em;
+  }
