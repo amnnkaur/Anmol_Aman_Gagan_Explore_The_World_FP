@@ -24,3 +24,32 @@
     font-size: 1.5em;
     border-radius: 0.5em 0.5em;
   }
+  .para1 {
+    flex: 33.33%;
+    padding: 5px;
+    border-style: groove;
+  }
+  .para1:hover{
+    background-color: MintCream;
+     transform: scale(1.2);
+  }
+  .count{
+    clear: both;
+    width: 50%;
+    float: left;
+  
+  }
+  .rate {
+    width: 50%;
+    float: right;
+    text-align: right;
+  
+  
+  }
+  .rate p {
+    margin-top: -1em;
+  
+  }
+  .count p{
+      margin-top: -1em;
+  }
