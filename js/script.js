@@ -44,6 +44,8 @@ function registerUser(){
   let firstname = document.getElementById('name').value;
   let lastname = document.getElementById('userName').value;
   let pass = document.getElementById('password').value;
+  let mobile = document.getElementById('mobile').value;
+  let userName = document.getElementById('userName').value;
 
   if(firstname == "" & lastname == "" & pass == ""){
     alert("Please fill the required fields..");
@@ -71,6 +73,14 @@ function registerUser(){
          let transaction = db.transaction("userdata", "readwrite");
          let t = transaction.objectStore("userdata");
 
+         let newData={
+            id: userName,
+            name: firstname,
+            mobile: mobile,
+            password: pass,
+            requests: []
+         }
+
          let data={
             id: firstname,
             lastname: lastname,
@@ -81,14 +91,14 @@ function registerUser(){
          }
 
 
-         let req = t.add(data);
+         let req = t.add(newData);
 
          req.onsuccess = function() {
 
 
             console.log(req.result)
-            console.log(data);
-
+            console.log(newData);
+            window.close();
          };
 
          req.onerror = function() {
@@ -100,14 +110,14 @@ function registerUser(){
 openRequest.onblocked = function() {
 
 };
-document.getElementById('fname').value = ""
-document.getElementById('lname').value = ""
-document.getElementById('passwordsignup').value = ""
-var x = document.getElementById("msg");
-x.className = "show";
-setTimeout(function() {
-  x.className.replace("show", "");
-}, 30000);
+// document.getElementById('fname').value = ""
+// document.getElementById('lname').value = ""
+// document.getElementById('passwordsignup').value = ""
+// var x = document.getElementById("msg");
+// x.className = "show";
+// setTimeout(function() {
+//   x.className.replace("show", "");
+// }, 30000);
 
 }
 }
