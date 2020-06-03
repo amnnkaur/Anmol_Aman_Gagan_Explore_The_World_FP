@@ -100,6 +100,8 @@ function registerUser(){
 
             console.log(req.result)
             console.log(newData);
+            alert('Account successfully created!!')
+            // window.location.href = '../login.html'
             window.close();
          };
 
