@@ -4,6 +4,8 @@ function signUp(){
     window.open("js/signup.html", "_blank", "width:200 , height:360")
 }
 
+let loggedInId = "";
+
 createObjectStores();
 
 
@@ -174,8 +176,8 @@ function userlogIn(){
               alert("User not registered!!!!")
             }else if (p == recieved.password) {
 
-                alert("Welcome " + recieved.name +" !!")
-                // document.getElementById('replace').innerHTML = '<p>'+recieved.name+'</p>'
+                loggedInId = recieved.id
+                alert("Welcome " + recieved.name +" !! Your id is: "+ loggedInId )
                saveLoginUser(userName);
 
             }else {
