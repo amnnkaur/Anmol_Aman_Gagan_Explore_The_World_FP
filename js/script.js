@@ -91,14 +91,14 @@ function registerUser(){
             requests: []
          }
 
-         let data={
-            id: firstname,
-            lastname: lastname,
-            password: pass,
-            requests: []
+        //  let data={
+        //     id: firstname,
+        //     lastname: lastname,
+        //     password: pass,
+        //     requests: []
 
 
-         }
+        //  }
 
 
          let req = t.add(newData);
@@ -276,28 +276,17 @@ function bookhotelfunc(){
 
     };
 
-    let hname = document.getElementById('form-name').value
-    let hperson = document.getElementById('form-name').value
-    let hotelin = document.getElementById('form-checkIN').value
-    let hotelout  = document.getElementById('form-checkOUT').value
-
     // let hotelName = document.getElementById('form-name').value
+    // let noOfPersons = document.getElementById('form-name').value
     // let checkInDate = document.getElementById('form-checkIN').value
-    // let checkOutDate = document.getElementById('form-checkOUT').value
-    // let hotelType = document.getElementsByName('hotel-type').value
-    // for (let i = 0; i < hotelType.length; i++) {
-   
-    //     if (hotelType[i].checked) {
-    //       // do whatever you want with the checked radio
-    //       alert(hotelType[i].value);
-      
-    //       // only one radio can be logically checked, don't check the rest
-    //       break;
-    //     }
-    //   }
+    // let checkOutDate  = document.getElementById('form-checkOUT').value
 
-    // let breakfastRequired = document.getElementById('').value
-    // let noOfPersons = document.getElementById('').value
+    let hotelName = document.getElementById('form-name').value
+    let checkInDate = document.getElementById('form-checkIN').value
+    let checkOutDate = document.getElementById('form-checkOUT').value
+    let hotelType = document.querySelector('input[name="hotel-type"]:checked').value
+    let breakfastRequired = document.querySelector('input[name="hotel-breakfast"]:checked').value
+    let noOfPersons = document.querySelector('input[name="no-of-people"]:checked').value
 
    openRequest.onsuccess = function() {
         let db = openRequest.result;
@@ -331,23 +320,21 @@ function bookhotelfunc(){
 
              let inforesult = info.result;
 
-             let ln = inforesult.name;
-             let p = inforesult.password;
+             let firstname = inforesult.name;
+             let pass = inforesult.password;
+             let mobile = inforesult.mobile
              let inforeqs = inforesult.requests;
 
-            //  if(hname == "" & hperson == "" & hotelin == "" & hotelout == ""){
-            //    alert("Please fill the required fields!!")
-            //  }else {
 
-               inforeqs.push("Hotel Booked:" + hname + "<br> Persons:" + hperson+"<br> Check In:"+hotelin+"<br> Check Out:"
-             + hotelout);
+               inforeqs.push("Hotel Booked: " + hotelName + "<br> People: " + noOfPersons+"<br> Check In: "+checkInDate+"<br> Check Out: "
+             + checkOutDate + "<br> Hotel Type: " + hotelType + "<br> Breakfast Required: " + breakfastRequired);
 
              let Newdata={
 
-
                 id: loginame,
-                lastname: ln,
-                password: p,
+                name: firstname,
+                mobile: mobile,
+                password: pass,
                 requests: inforeqs
 
              }
@@ -355,10 +342,6 @@ function bookhotelfunc(){
 
              req.onsuccess = function() {
                alert("Booking succesful!!")
-            //    document.getElementById('hotelname').value = ""
-            //    document.getElementById('numperson').value = ""
-            //    document.getElementById('hotelcheckin').value = ""
-            //    document.getElementById('hotelcheckout').value = ""
 
                 console.log(req.result)
                 console.log(Newdata);
@@ -366,8 +349,7 @@ function bookhotelfunc(){
              };
              req.onerror = function() {
                          console.log("Error", request.error);
-                  }
-        //   };
+                  } 
 
            }
 
