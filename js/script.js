@@ -8,6 +8,10 @@ function formWindow(){
     window.open('hotelForm.html','_blank', "width:200 , height:360")
 }
 
+function backButton(){
+    window.open('hotelForm.html','_blank', "width:200 , height:360")
+}
+
 let loggedInId = "";
 
 createObjectStores();
