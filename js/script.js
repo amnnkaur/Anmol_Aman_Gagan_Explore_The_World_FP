@@ -183,8 +183,9 @@ function userlogIn(){
             }else if (p == recieved.password) {
 
                 loggedInId = recieved.id
-                alert("Welcome " + recieved.name +" !! Your id is: "+ loggedInId )
+                
                saveLoginUser(userName);
+            //    alert("Welcome " + recieved.name +" !! Your id is: "+ loggedInId )
 
             }else {
               alert("Oops!!!  Wrong password")
@@ -257,9 +258,7 @@ openRequest.onblocked = function() {
 }//end of function
 
 function bookhotelfunc(){
-
-
-
+   
    let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
       openRequest.onupgradeneeded = function() {
@@ -273,10 +272,28 @@ function bookhotelfunc(){
 
     };
 
-    let hname = document.getElementById('hotelname').value
-    let hperson = document.getElementById('numperson').value
-    let hotelin = document.getElementById('hotelcheckin').value
-    let hotelout  = document.getElementById('hotelcheckout').value
+    let hname = document.getElementById('form-name').value
+    let hperson = document.getElementById('form-name').value
+    let hotelin = document.getElementById('form-checkIN').value
+    let hotelout  = document.getElementById('form-checkOUT').value
+
+    // let hotelName = document.getElementById('form-name').value
+    // let checkInDate = document.getElementById('form-checkIN').value
+    // let checkOutDate = document.getElementById('form-checkOUT').value
+    // let hotelType = document.getElementsByName('hotel-type').value
+    // for (let i = 0; i < hotelType.length; i++) {
+   
+    //     if (hotelType[i].checked) {
+    //       // do whatever you want with the checked radio
+    //       alert(hotelType[i].value);
+      
+    //       // only one radio can be logically checked, don't check the rest
+    //       break;
+    //     }
+    //   }
+
+    // let breakfastRequired = document.getElementById('').value
+    // let noOfPersons = document.getElementById('').value
 
    openRequest.onsuccess = function() {
         let db = openRequest.result;
@@ -310,13 +327,13 @@ function bookhotelfunc(){
 
              let inforesult = info.result;
 
-             let ln = inforesult.lastname;
+             let ln = inforesult.name;
              let p = inforesult.password;
              let inforeqs = inforesult.requests;
 
-             if(hname == "" & hperson == "" & hotelin == "" & hotelout == ""){
-               alert("Please fill the required fields!!")
-             }else {
+            //  if(hname == "" & hperson == "" & hotelin == "" & hotelout == ""){
+            //    alert("Please fill the required fields!!")
+            //  }else {
 
                inforeqs.push("Hotel Booked:" + hname + "<br> Persons:" + hperson+"<br> Check In:"+hotelin+"<br> Check Out:"
              + hotelout);
@@ -334,10 +351,10 @@ function bookhotelfunc(){
 
              req.onsuccess = function() {
                alert("Booking succesful!!")
-               document.getElementById('hotelname').value = ""
-               document.getElementById('numperson').value = ""
-               document.getElementById('hotelcheckin').value = ""
-               document.getElementById('hotelcheckout').value = ""
+            //    document.getElementById('hotelname').value = ""
+            //    document.getElementById('numperson').value = ""
+            //    document.getElementById('hotelcheckin').value = ""
+            //    document.getElementById('hotelcheckout').value = ""
 
                 console.log(req.result)
                 console.log(Newdata);
@@ -346,7 +363,7 @@ function bookhotelfunc(){
              req.onerror = function() {
                          console.log("Error", request.error);
                   }
-          };
+        //   };
 
            }
 

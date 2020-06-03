@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/92fa2537c2.js"></script>
+    <script src="js/script.js"></script>
 
     <title>Hotel Booking</title>
     
@@ -229,11 +230,11 @@ body {
         <div class='set'>
           <div class='form-checkIN'>
             <label for='form-checkIN'>Check in</label>
-            <input id='form-checkIN' placeholder='MM/DD/YYYY' type='text'>
+            <input id='form-checkIN' placeholder='MM/DD/YYYY' type='date'>
           </div>
           <div class='form-checkOUT'>
             <label for='form-checkOUT'>Check Out</label>
-            <input id='form-checkOUT' placeholder='MM/DD/YYYY' type='text'>
+            <input id='form-checkOUT' placeholder='MM/DD/YYYY' type='date'>
           </div>
         </div>
         <div class='set'>
@@ -272,8 +273,8 @@ body {
       </header>
       <footer>
         <div class='set'>
-          <button id='back'>Back</button>
-          <button id='save'>Save</button>
+          <button id='back' onclick="window.close()">Back</button>
+          <button id='save' onclick="bookhotelfunc()">Save</button>
         </div>
       </footer>
     </div>
