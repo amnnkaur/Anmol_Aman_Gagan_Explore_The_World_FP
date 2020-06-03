@@ -261,7 +261,7 @@ openRequest.onblocked = function() {
 
 }//end of function
 
-function bookhotelfunc(){
+function hotelBooking(){
    
    let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
@@ -275,11 +275,6 @@ function bookhotelfunc(){
         console.log("error called")
 
     };
-
-    // let hotelName = document.getElementById('form-name').value
-    // let noOfPersons = document.getElementById('form-name').value
-    // let checkInDate = document.getElementById('form-checkIN').value
-    // let checkOutDate  = document.getElementById('form-checkOUT').value
 
     let hotelName = document.getElementById('form-name').value
     let checkInDate = document.getElementById('form-checkIN').value
@@ -350,20 +345,9 @@ function bookhotelfunc(){
              req.onerror = function() {
                          console.log("Error", request.error);
                   } 
-
-           }
-
+                }
+            }
          }
-
-
-
-
-
-         }
-
-
-
-
     }
        openRequest.onblocked = function() {
       };
@@ -476,11 +460,114 @@ function bookcarfunc(){
       };
 }
 
-function bookairlinefunc(){
+function airTicketsBooking(){
 
 
 
-   let openRequest = indexedDB.open("exploreTheWorldDb", 1);
+//    let openRequest = indexedDB.open("exploreTheWorldDb", 1);
+
+//       openRequest.onupgradeneeded = function() {
+
+//         console.log("upgrade called")
+//      };
+
+//     openRequest.onerror = function() {
+
+//         console.log("error called")
+
+//     };
+
+//     let aname = document.getElementById('airlinename').value
+//     let aperson = document.getElementById('numpassenger').value
+//     let airin = document.getElementById('aircheckin').value
+//     let airout  = document.getElementById('aircheckout').value
+
+//    openRequest.onsuccess = function() {
+//         let db = openRequest.result;
+
+//           console.log("success called")
+
+//         db.onversionchange = function() {
+//         db.close();
+
+//          };
+//          let transaction = db.transaction("userdata", "readwrite");
+//          let t = transaction.objectStore("userdata");
+
+
+//          let r = t.get("logInUser");
+
+
+//          r.onsuccess = function(){
+//            let reslt = r.result;
+
+//            if(reslt == null){
+//              alert("User not registered!!")
+//            }else {
+
+
+//            let loginame = reslt.username;
+//            console.log(loginame);
+
+//            let info = t.get(loginame);
+//            info.onsuccess = function(){
+
+//              let inforesult = info.result;
+
+//              let ln = inforesult.lastname;
+//              let p = inforesult.password;
+//              let inforeqs = inforesult.requests;
+
+//              if(aname == "" & aperson == "" & airin == "" & airout == ""){
+//                alert("Please fill the required fields!!")
+//              }else {
+
+//                inforeqs.push("Airline:" + aname + "<br> Passenger:" + aperson+"<br> Check In:"+airin+"<br> Check Out:"
+//              + airout);
+
+//              let Newdata={
+
+
+//                 id: loginame,
+//                 lastname: ln,
+//                 password: p,
+//                 requests: inforeqs
+
+//              }
+//              let req = t.put(Newdata);
+
+//              req.onsuccess = function() {
+//                alert("Booking succesful..")
+//                document.getElementById('airlinename').value = ""
+//                document.getElementById('numpassenger').value = ""
+//                document.getElementById('aircheckin').value = ""
+//                document.getElementById('aircheckout').value = ""
+//                 console.log(req.result)
+//                 console.log(Newdata);
+
+//              };
+//              req.onerror = function() {
+//                          console.log("Error", request.error);
+//                   }
+//           };
+
+//            }
+
+
+// }
+
+
+//          }
+
+
+
+
+//     }
+//        openRequest.onblocked = function() {
+//       };
+
+
+let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
       openRequest.onupgradeneeded = function() {
 
@@ -493,10 +580,12 @@ function bookairlinefunc(){
 
     };
 
-    let aname = document.getElementById('airlinename').value
-    let aperson = document.getElementById('numpassenger').value
-    let airin = document.getElementById('aircheckin').value
-    let airout  = document.getElementById('aircheckout').value
+    let hotelName = document.getElementById('form-name').value
+    let checkInDate = document.getElementById('form-checkIN').value
+    let checkOutDate = document.getElementById('form-checkOUT').value
+    let hotelType = document.querySelector('input[name="hotel-type"]:checked').value
+    let breakfastRequired = document.querySelector('input[name="hotel-breakfast"]:checked').value
+    let noOfPersons = document.querySelector('input[name="no-of-people"]:checked').value
 
    openRequest.onsuccess = function() {
         let db = openRequest.result;
@@ -518,7 +607,7 @@ function bookairlinefunc(){
            let reslt = r.result;
 
            if(reslt == null){
-             alert("User not registered!!")
+             alert("User not registered!!");
            }else {
 
 
@@ -530,57 +619,44 @@ function bookairlinefunc(){
 
              let inforesult = info.result;
 
-             let ln = inforesult.lastname;
-             let p = inforesult.password;
+             let firstname = inforesult.name;
+             let pass = inforesult.password;
+             let mobile = inforesult.mobile
              let inforeqs = inforesult.requests;
 
-             if(aname == "" & aperson == "" & airin == "" & airout == ""){
-               alert("Please fill the required fields!!")
-             }else {
 
-               inforeqs.push("Airline:" + aname + "<br> Passenger:" + aperson+"<br> Check In:"+airin+"<br> Check Out:"
-             + airout);
+               inforeqs.push("Airline Booked: " + hotelName + "<br> People: " + noOfPersons+"<br> Depart Date: "+checkInDate+"<br> Return Date: "
+             + checkOutDate + "<br> AirLine Type: " + hotelType + "<br> Meal: " + breakfastRequired);
 
              let Newdata={
 
-
                 id: loginame,
-                lastname: ln,
-                password: p,
+                name: firstname,
+                mobile: mobile,
+                password: pass,
                 requests: inforeqs
 
              }
              let req = t.put(Newdata);
 
              req.onsuccess = function() {
-               alert("Booking succesful..")
-               document.getElementById('airlinename').value = ""
-               document.getElementById('numpassenger').value = ""
-               document.getElementById('aircheckin').value = ""
-               document.getElementById('aircheckout').value = ""
+               alert("Booking succesful!!")
+
                 console.log(req.result)
                 console.log(Newdata);
 
              };
              req.onerror = function() {
                          console.log("Error", request.error);
-                  }
-          };
-
-           }
-
-
-}
-
-
+                  } 
+                }
+            }
          }
-
-
-
-
     }
        openRequest.onblocked = function() {
       };
+
+
 }
 
 function showmylist(){

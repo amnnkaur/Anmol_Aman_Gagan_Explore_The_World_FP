@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/92fa2537c2.js"></script>
-
-    <title>Hotel Booking</title>
+    <script src="js/script.js"></script>
+    <title>Air Ticket Booking</title>
     
 </head>
 <body>
@@ -209,7 +209,7 @@ body {
 <div class='signup-container'>
     <div class='left-container'>
       <h1>
-        <i class='fas fa-hotel'></i>
+        <i class='fas fa-plane'></i>
         Explore the World
       </h1>
       <div class='form-template-left-container-icon'>
@@ -222,7 +222,7 @@ body {
         <div class='set'>
           <div class='form-name'>
             <label for='form-name'>Airline</label>
-            <input id='form-name' placeholder="airline's name" type='text'>
+            <input id='form-name' placeholder="Airline's name" type='text'>
           </div>
           <!-- <div class='pets-photo'>
             <button id='pets-upload'>
@@ -233,12 +233,12 @@ body {
         </div>
         <div class='set'>
           <div class='form-checkIN'>
-            <label for='form-checkIN'>Check in</label>
-            <input id='form-checkIN' placeholder='MM/DD/YYYY' type='text'>
+            <label for='form-checkIN'>Depart Date</label>
+            <input id='form-checkIN' placeholder='MM/DD/YYYY' type='date'>
           </div>
           <div class='form-checkOUT'>
-            <label for='form-checkOUT'>Check Out</label>
-            <input id='form-checkOUT' placeholder='MM/DD/YYYY' type='text'>
+            <label for='form-checkOUT'>Return Date</label>
+            <input id='form-checkOUT' placeholder='MM/DD/YYYY' type='date'>
           </div>
         </div>
         <div class='set'>
@@ -252,25 +252,25 @@ body {
             </div>
           </div>
           <div class='form-type2'>
-            <label for='form-type2-1'>Breakfast</label>
+            <label for='form-type2-1'>Meal</label>
             <div class='radio-container'>
-              <input checked='' id='form-type2-1' name='hotel-breakfast' type='radio' value='yes'>
-              <label for='form-type2-1'>Yes</label>
-              <input id='form-type2-2' name='hotel-breakfast' type='radio' value='no'>
-              <label for='form-type2-2'>No</label>
+              <input checked='' id='form-type2-1' name='hotel-breakfast' type='radio' value='veg'>
+              <label for='form-type2-1'>Veg</label>
+              <input id='form-type2-2' name='hotel-breakfast' type='radio' value='non-veg'>
+              <label for='form-type2-2'>Non-Veg</label>
             </div>
           </div>
         </div>
         <div class='form-noOfPersons'>
           <label for='form-noOfPersons-type1'>No of persons</label>
           <div class='radio-container'>
-            <input checked='' id='form-noOfPersons-type1' name='pet-weight' type='radio' value='0-2'>
+            <input checked='' id='form-noOfPersons-type1' name='no-of-people' type='radio' value='0-2'>
             <label for='form-noOfPersons-type1'>0-2</label>
-            <input id='form-noOfPersons-type2' name='pet-weight' type='radio' value='2-5'>
+            <input id='form-noOfPersons-type2' name='no-of-people' type='radio' value='2-5'>
             <label for='form-noOfPersons-type2'>2-5</label>
-            <input id='form-noOfPersons-type3' name='pet-weight' type='radio' value='5-10'>
+            <input id='form-noOfPersons-type3' name='no-of-people' type='radio' value='5-10'>
             <label for='form-noOfPersons-type3'>5-10</label>
-            <input id='form-noOfPersons-type4' name='pet-weight' type='radio' value='10+'>
+            <input id='form-noOfPersons-type4' name='no-of-people' type='radio' value='10+'>
             <label for='form-noOfPersons-type4'>10+</label>
           </div>
         </div>
@@ -278,7 +278,7 @@ body {
       <footer>
         <div class='set'>
           <button id='back' onclick="location.href='index.html'">Back</button>
-          <button id='save'>Save</button>
+          <button id='save' onclick="airTicketsBooking()">Save</button>
         </div>
       </footer>
     </div>
