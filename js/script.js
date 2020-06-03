@@ -337,7 +337,7 @@ function hotelBooking(){
 
              req.onsuccess = function() {
                alert("Booking succesful!!")
-
+               window.location.href ='index.html'
                 console.log(req.result)
                 console.log(Newdata);
 
@@ -353,219 +353,99 @@ function hotelBooking(){
       };
 }
 
-function bookcarfunc(){
+function carBooking(){
+
+    let openRequest = indexedDB.open("exploreTheWorldDb", 1);
+
+    openRequest.onupgradeneeded = function() {
+
+      console.log("upgrade called")
+   };
+
+  openRequest.onerror = function() {
+
+      console.log("error called")
+
+  };
+
+  let hotelName = document.getElementById('form-name').value
+  let checkInDate = document.getElementById('form-checkIN').value
+  let checkOutDate = document.getElementById('form-checkOUT').value
+  let hotelType = document.querySelector('input[name="hotel-type"]:checked').value
+  let breakfastRequired = document.querySelector('input[name="hotel-breakfast"]:checked').value
+  let noOfPersons = document.querySelector('input[name="no-of-people"]:checked').value
+
+ openRequest.onsuccess = function() {
+      let db = openRequest.result;
+
+        console.log("success called")
+
+      db.onversionchange = function() {
+      db.close();
+
+       };
+       let transaction = db.transaction("userdata", "readwrite");
+       let t = transaction.objectStore("userdata");
 
 
-
-   let openRequest = indexedDB.open("exploreTheWorldDb", 1);
-
-      openRequest.onupgradeneeded = function() {
-
-        console.log("upgrade called")
-     };
-
-    openRequest.onerror = function() {
-
-        console.log("error called")
-
-    };
-
-    let cname = document.getElementById('carname').value
-    let cperson = document.getElementById('carperson').value
-    let carin = document.getElementById('carcheckin').value
-    let carout  = document.getElementById('carcheckout').value
-
-   openRequest.onsuccess = function() {
-        let db = openRequest.result;
-
-          console.log("success called")
-
-        db.onversionchange = function() {
-        db.close();
-
-         };
-         let transaction = db.transaction("userdata", "readwrite");
-         let t = transaction.objectStore("userdata");
+       let r = t.get("logInUser");
 
 
-         let r = t.get("logInUser");
+       r.onsuccess = function(){
+         let reslt = r.result;
+
+         if(reslt == null){
+           alert("User not registered!!");
+         }else {
 
 
-         r.onsuccess = function(){
-           let reslt = r.result;
+         let loginame = reslt.username;
+         console.log(loginame);
 
-           if(reslt == null){
-             alert("User not registered!!" )
-           }else {
+         let info = t.get(loginame);
+         info.onsuccess = function(){
 
+           let inforesult = info.result;
 
-           let loginame = reslt.username;
-           console.log(loginame);
-
-           let info = t.get(loginame);
-           info.onsuccess = function(){
-
-             let inforesult = info.result;
-
-             let ln = inforesult.lastname;
-             let p = inforesult.password;
-             let inforeqs = inforesult.requests;
-
-             if(cname == "" & cperson == "" & carin == "" & carout == ""){
-               alert("Please fill the required fields!!")
-             }else {
-
-               inforeqs.push("Car Booked:" + cname + "<br> Persons:" + cperson+"<br> Check In:"+carin+"<br> Check Out:"
-             + carout);
-
-             let Newdata={
+           let firstname = inforesult.name;
+           let pass = inforesult.password;
+           let mobile = inforesult.mobile
+           let inforeqs = inforesult.requests;
 
 
-                id: loginame,
-                lastname: ln,
-                password: p,
-                requests: inforeqs
+             inforeqs.push("Car Booked: " + hotelName + "<br> People: " + noOfPersons+"<br> Start Date: "+checkInDate+"<br> End Date: "
+           + checkOutDate + "<br> Car Type: " + hotelType + "<br> Self Drive: " + breakfastRequired);
 
-             }
-             let req = t.put(Newdata);
+           let Newdata={
 
-             req.onsuccess = function() {
-               alert("Booking succesful..")
-               document.getElementById('carname').value = ""
-               document.getElementById('carperson').value = ""
-               document.getElementById('carcheckin').value = ""
-               document.getElementById('carcheckout').value = ""
-                console.log(req.result)
-                console.log(Newdata);
-
-             };
-             req.onerror = function() {
-                         console.log("Error", request.error);
-                  }
-          };
+              id: loginame,
+              name: firstname,
+              mobile: mobile,
+              password: pass,
+              requests: inforeqs
 
            }
+           let req = t.put(Newdata);
 
+           req.onsuccess = function() {
+             alert("Booking succesful!!")
+             window.location.href ='index.html'
+              console.log(req.result)
+              console.log(Newdata);
 
-}
-
-
-         }
-
-
-
-
-    }
-       openRequest.onblocked = function() {
-      };
+           };
+           req.onerror = function() {
+                       console.log("Error", request.error);
+                } 
+              }
+          }
+       }
+  }
+     openRequest.onblocked = function() {
+    };
 }
 
 function airTicketsBooking(){
-
-
-
-//    let openRequest = indexedDB.open("exploreTheWorldDb", 1);
-
-//       openRequest.onupgradeneeded = function() {
-
-//         console.log("upgrade called")
-//      };
-
-//     openRequest.onerror = function() {
-
-//         console.log("error called")
-
-//     };
-
-//     let aname = document.getElementById('airlinename').value
-//     let aperson = document.getElementById('numpassenger').value
-//     let airin = document.getElementById('aircheckin').value
-//     let airout  = document.getElementById('aircheckout').value
-
-//    openRequest.onsuccess = function() {
-//         let db = openRequest.result;
-
-//           console.log("success called")
-
-//         db.onversionchange = function() {
-//         db.close();
-
-//          };
-//          let transaction = db.transaction("userdata", "readwrite");
-//          let t = transaction.objectStore("userdata");
-
-
-//          let r = t.get("logInUser");
-
-
-//          r.onsuccess = function(){
-//            let reslt = r.result;
-
-//            if(reslt == null){
-//              alert("User not registered!!")
-//            }else {
-
-
-//            let loginame = reslt.username;
-//            console.log(loginame);
-
-//            let info = t.get(loginame);
-//            info.onsuccess = function(){
-
-//              let inforesult = info.result;
-
-//              let ln = inforesult.lastname;
-//              let p = inforesult.password;
-//              let inforeqs = inforesult.requests;
-
-//              if(aname == "" & aperson == "" & airin == "" & airout == ""){
-//                alert("Please fill the required fields!!")
-//              }else {
-
-//                inforeqs.push("Airline:" + aname + "<br> Passenger:" + aperson+"<br> Check In:"+airin+"<br> Check Out:"
-//              + airout);
-
-//              let Newdata={
-
-
-//                 id: loginame,
-//                 lastname: ln,
-//                 password: p,
-//                 requests: inforeqs
-
-//              }
-//              let req = t.put(Newdata);
-
-//              req.onsuccess = function() {
-//                alert("Booking succesful..")
-//                document.getElementById('airlinename').value = ""
-//                document.getElementById('numpassenger').value = ""
-//                document.getElementById('aircheckin').value = ""
-//                document.getElementById('aircheckout').value = ""
-//                 console.log(req.result)
-//                 console.log(Newdata);
-
-//              };
-//              req.onerror = function() {
-//                          console.log("Error", request.error);
-//                   }
-//           };
-
-//            }
-
-
-// }
-
-
-//          }
-
-
-
-
-//     }
-//        openRequest.onblocked = function() {
-//       };
-
 
 let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
@@ -641,7 +521,7 @@ let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
              req.onsuccess = function() {
                alert("Booking succesful!!")
-
+                window.location.href ='index.html'
                 console.log(req.result)
                 console.log(Newdata);
 
