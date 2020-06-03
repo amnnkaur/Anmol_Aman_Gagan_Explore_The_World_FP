@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/92fa2537c2.js"></script>
-    <script src="js/script.js"></script>
 
     <title>Hotel Booking</title>
     
@@ -20,8 +19,8 @@
 
 body {
   align-items: center;
-  background: #D8AA96;
-  color: rgba(0, 0, 0, 0.8);
+  background:	#B0E0E6;
+  color: rgba(149, 204, 236, 0.8);
   display: grid;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -38,7 +37,7 @@ body {
 }
 
 .left-container {
-  background: #807182;
+  background: #ADD8E6;
   overflow: hidden;
   padding: 40px 0 0 0;
   position: relative;
@@ -51,7 +50,7 @@ body {
   font-size: 24px;
 }
 .left-container h1 i {
-  background: #F7B1AB;
+  background:#87CEFA;
   border-radius: 50%;
   color: #807182;
   font-size: 24px;
@@ -65,7 +64,7 @@ body {
   text-align: center;
 }
 .left-container .form-template-left-container-icon:before {
-  background: #807182;
+  background: #ADD8E6;
   content: "";
   height: 100%;
   left: 0;
@@ -80,7 +79,7 @@ body {
 }
 
 .form-template-right-container {
-  background: #f9c7c2;
+  background: #87CEEB;
   display: grid;
   grid-template-areas: "." ".";
   width: 500px;
@@ -94,6 +93,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
+  color: #87CEEB;
 }
 .form-template-right-container input {
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -196,7 +196,7 @@ body {
 }
 
 .radio-container input[type="radio"]:checked + label {
-  background: #F7B1AB;
+  background:#87CEEB;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -209,16 +209,16 @@ body {
         Explore the World
       </h1>
       <div class='form-template-left-container-icon'>
-        <img src='https://cdn1.i-scmp.com/sites/default/files/styles/768x768/public/images/methode/2018/06/18/12ff36d8-597d-11e8-a7d9-186ba932a081_1280x720_152528.jpg?itok=YKTW69E3'>
+        <img src='images/tenor.gif'>
       </div>
     </div>
     <div class='form-template-right-container'>
       <header>
-        <h1>We can ensure that you will get the best deal over here!!</h1>
+        <h1>We know how to get you to your destination!!</h1>
         <div class='set'>
           <div class='form-name'>
-            <label for='form-name'>Hotel</label>
-            <input id='form-name' placeholder="Hotel's name" type='text'>
+            <label for='form-name'>Cab</label>
+            <input id='form-name' placeholder="cab's name" type='text'>
           </div>
           <!-- <div class='pets-photo'>
             <button id='pets-upload'>
@@ -229,12 +229,12 @@ body {
         </div>
         <div class='set'>
           <div class='form-checkIN'>
-            <label for='form-checkIN'>Check in</label>
-            <input id='form-checkIN' placeholder='MM/DD/YYYY' type='date'>
+            <label for='form-checkIN'>Date of booking </label>
+            <input id='form-checkIN' placeholder='MM/DD/YYYY' type='text'>
           </div>
           <div class='form-checkOUT'>
-            <label for='form-checkOUT'>Check Out</label>
-            <input id='form-checkOUT' placeholder='MM/DD/YYYY' type='date'>
+            <label for='form-checkOUT'>End date</label>
+            <input id='form-checkOUT' placeholder='MM/DD/YYYY' type='text'>
           </div>
         </div>
         <div class='set'>
@@ -242,20 +242,12 @@ body {
             <label for='form-type-1'>Type</label>
             <div class='radio-container'>
               <input checked='' id='form-type-1' name='hotel-type' type='radio' value='Deluxe'>
-              <label for='form-type-1'>Deluxe</label>
+              <label for='form-type-1'>Standard</label>
               <input id='form-type-2' name='hotel-type' type='radio' value='Luxury'>
-              <label for='form-type-2'>Luxury</label>
+              <label for='form-type-2'>Deluxe</label>
             </div>
           </div>
-          <div class='form-type2'>
-            <label for='form-type2-1'>Breakfast</label>
-            <div class='radio-container'>
-              <input checked='' id='form-type2-1' name='hotel-breakfast' type='radio' value='yes'>
-              <label for='form-type2-1'>Yes</label>
-              <input id='form-type2-2' name='hotel-breakfast' type='radio' value='no'>
-              <label for='form-type2-2'>No</label>
-            </div>
-          </div>
+          
         </div>
         <div class='form-noOfPersons'>
           <label for='form-noOfPersons-type1'>No of persons</label>
@@ -273,8 +265,8 @@ body {
       </header>
       <footer>
         <div class='set'>
-          <button id='back' onclick="window.close()">Back</button>
-          <button id='save' onclick="bookhotelfunc()">Save</button>
+          <button id='back'>Back</button>
+          <button id='save'>Save</button>
         </div>
       </footer>
     </div>
