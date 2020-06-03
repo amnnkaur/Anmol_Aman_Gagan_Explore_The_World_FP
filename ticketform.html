@@ -19,7 +19,7 @@
 
 body {
   align-items: center;
-  background: #D8AA96;
+  background: #FFF0F5;
   color: rgba(0, 0, 0, 0.8);
   display: grid;
   font-family: "Montserrat", sans-serif;
@@ -37,7 +37,7 @@ body {
 }
 
 .left-container {
-  background: #807182;
+  background:#FFB6C1;
   overflow: hidden;
   padding: 40px 0 0 0;
   position: relative;
@@ -50,7 +50,7 @@ body {
   font-size: 24px;
 }
 .left-container h1 i {
-  background: #F7B1AB;
+  background: 	#FF69B4;
   border-radius: 50%;
   color: #807182;
   font-size: 24px;
@@ -64,7 +64,7 @@ body {
   text-align: center;
 }
 .left-container .form-template-left-container-icon:before {
-  background: #807182;
+  background: #DDA0DD;
   content: "";
   height: 100%;
   left: 0;
@@ -75,11 +75,16 @@ body {
 }
 .left-container img {
   filter: sepia(100%);
-  width: 70%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  text-align: center;
+
+
 }
 
 .form-template-right-container {
-  background: #f9c7c2;
+  background:#FFFFFF;
   display: grid;
   grid-template-areas: "." ".";
   width: 500px;
@@ -195,7 +200,7 @@ body {
 }
 
 .radio-container input[type="radio"]:checked + label {
-  background: #F7B1AB;
+  background: #F7B1Ac;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -208,16 +213,16 @@ body {
         Explore the World
       </h1>
       <div class='form-template-left-container-icon'>
-        <img src='https://cdn1.i-scmp.com/sites/default/files/styles/768x768/public/images/methode/2018/06/18/12ff36d8-597d-11e8-a7d9-186ba932a081_1280x720_152528.jpg?itok=YKTW69E3'>
+        <img src='images/aero.jpg'>
       </div>
     </div>
     <div class='form-template-right-container'>
       <header>
-        <h1>We can ensure that you will get the best deal over here!!</h1>
+        <h1>Flights at reasonable price with full facilities!!</h1>
         <div class='set'>
           <div class='form-name'>
-            <label for='form-name'>Hotel</label>
-            <input id='form-name' placeholder="Hotel's name" type='text'>
+            <label for='form-name'>Airline</label>
+            <input id='form-name' placeholder="airline's name" type='text'>
           </div>
           <!-- <div class='pets-photo'>
             <button id='pets-upload'>
@@ -241,9 +246,9 @@ body {
             <label for='form-type-1'>Type</label>
             <div class='radio-container'>
               <input checked='' id='form-type-1' name='hotel-type' type='radio' value='Deluxe'>
-              <label for='form-type-1'>Deluxe</label>
+              <label for='form-type-1'>Economy</label>
               <input id='form-type-2' name='hotel-type' type='radio' value='Luxury'>
-              <label for='form-type-2'>Luxury</label>
+              <label for='form-type-2'>Business</label>
             </div>
           </div>
           <div class='form-type2'>
