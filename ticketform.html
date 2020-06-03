@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/92fa2537c2.js"></script>
+
+    <title>Hotel Booking</title>
+    
+</head>
+<body>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  background: #D8AA96;
+  color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 100vh;
+  justify-items: center;
+  weight: 100vw;
+}
+
+.signup-container {
+  display: grid;
+  grid-template-areas: "left right";
+  max-width: 900px;
+}
+
+.left-container {
+  background: #807182;
+  overflow: hidden;
+  padding: 40px 0 0 0;
+  position: relative;
+  text-align: center;
+  width: 300px;
+}
+.left-container h1 {
+  color: rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  font-size: 24px;
+}
+.left-container h1 i {
+  background: #F7B1AB;
+  border-radius: 50%;
+  color: #807182;
+  font-size: 24px;
+  margin-right: 5px;
+  padding: 10px;
+  /* transform: rotate(-45deg); */
+}
+.left-container .form-template-left-container-icon {
+  bottom: -5px;
+  position: absolute;
+  text-align: center;
+}
+.left-container .form-template-left-container-icon:before {
+  background: #807182;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: .4;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.left-container img {
+  filter: sepia(100%);
+  width: 70%;
+}
+
+.form-template-right-container {
+  background: #f9c7c2;
+  display: grid;
+  grid-template-areas: "." ".";
+  width: 500px;
+}
+.form-template-right-container h1:nth-of-type(1) {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 28px;
+  font-weight: 600;
+}
+.form-template-right-container .set {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.form-template-right-container input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+}
+.form-template-right-container input, .form-template-right-container label {
+  color: rgba(0, 0, 0, 0.8);
+}
+.form-template-right-container header {
+  padding: 40px;
+}
+.form-template-right-container label, .form-template-right-container input, .form-template-right-container .pets-photo {
+  width: 176px;
+}
+.form-template-right-container .pets-photo {
+  align-items: center;
+  display: grid;
+  grid-template-areas: ". .";
+}
+.form-template-right-container .pets-photo button {
+  border: none;
+  border-radius: 50%;
+  height: 38px;
+  margin-right: 10px;
+  outline: none;
+  width: 38px;
+}
+.form-template-right-container .pets-photo button i {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+}
+.form-template-right-container .form-noOfPersons .radio-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.form-template-right-container footer {
+  align-items: center;
+  background: #fff;
+  display: grid;
+  padding: 5px 40px;
+}
+.form-template-right-container footer button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 38px;
+  line-height: 38px;
+  width: 100px;
+  border-radius: 19px;
+  font-family: "Montserrat", sans-serif;
+}
+.form-template-right-container footer #back {
+  background: #fff;
+  transition: .2s all ease-in-out;
+}
+.form-template-right-container footer #back:hover {
+  background: #171A2B;
+  color: white;
+}
+.form-template-right-container footer #save {
+  background: #807182;
+  border: 1px solid transparent;
+  color: #fff;
+}
+.form-template-right-container footer #save:hover {
+  background: #171A2B;
+}
+
+.form-name label, .form-checkIN label, .form-checkOUT label, .form-type label, .form-type2 label, .form-noOfPersons label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.radio-container {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px;
+}
+
+.radio-container label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: .2s all ease-in-out;
+  width: 80px;
+}
+
+.radio-container input[type="radio"] {
+  display: none;
+}
+
+.radio-container input[type="radio"]:checked + label {
+  background: #F7B1AB;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+
+<div class='signup-container'>
+    <div class='left-container'>
+      <h1>
+        <i class='fas fa-hotel'></i>
+        Explore the World
+      </h1>
+      <div class='form-template-left-container-icon'>
+        <img src='https://cdn1.i-scmp.com/sites/default/files/styles/768x768/public/images/methode/2018/06/18/12ff36d8-597d-11e8-a7d9-186ba932a081_1280x720_152528.jpg?itok=YKTW69E3'>
+      </div>
+    </div>
+    <div class='form-template-right-container'>
+      <header>
+        <h1>We can ensure that you will get the best deal over here!!</h1>
+        <div class='set'>
+          <div class='form-name'>
+            <label for='form-name'>Hotel</label>
+            <input id='form-name' placeholder="Hotel's name" type='text'>
+          </div>
+          <!-- <div class='pets-photo'>
+            <button id='pets-upload'>
+              <i class='fas fa-camera-retro'></i>
+            </button>
+            <label for='pets-upload'>Upload a photo</label>
+          </div> -->
+        </div>
+        <div class='set'>
+          <div class='form-checkIN'>
+            <label for='form-checkIN'>Check in</label>
+            <input id='form-checkIN' placeholder='MM/DD/YYYY' type='text'>
+          </div>
+          <div class='form-checkOUT'>
+            <label for='form-checkOUT'>Check Out</label>
+            <input id='form-checkOUT' placeholder='MM/DD/YYYY' type='text'>
+          </div>
+        </div>
+        <div class='set'>
+          <div class='form-type'>
+            <label for='form-type-1'>Type</label>
+            <div class='radio-container'>
+              <input checked='' id='form-type-1' name='hotel-type' type='radio' value='Deluxe'>
+              <label for='form-type-1'>Deluxe</label>
+              <input id='form-type-2' name='hotel-type' type='radio' value='Luxury'>
+              <label for='form-type-2'>Luxury</label>
+            </div>
+          </div>
+          <div class='form-type2'>
+            <label for='form-type2-1'>Breakfast</label>
+            <div class='radio-container'>
+              <input checked='' id='form-type2-1' name='hotel-breakfast' type='radio' value='yes'>
+              <label for='form-type2-1'>Yes</label>
+              <input id='form-type2-2' name='hotel-breakfast' type='radio' value='no'>
+              <label for='form-type2-2'>No</label>
+            </div>
+          </div>
+        </div>
+        <div class='form-noOfPersons'>
+          <label for='form-noOfPersons-type1'>No of persons</label>
+          <div class='radio-container'>
+            <input checked='' id='form-noOfPersons-type1' name='pet-weight' type='radio' value='0-2'>
+            <label for='form-noOfPersons-type1'>0-2</label>
+            <input id='form-noOfPersons-type2' name='pet-weight' type='radio' value='2-5'>
+            <label for='form-noOfPersons-type2'>2-5</label>
+            <input id='form-noOfPersons-type3' name='pet-weight' type='radio' value='5-10'>
+            <label for='form-noOfPersons-type3'>5-10</label>
+            <input id='form-noOfPersons-type4' name='pet-weight' type='radio' value='10+'>
+            <label for='form-noOfPersons-type4'>10+</label>
+          </div>
+        </div>
+      </header>
+      <footer>
+        <div class='set'>
+          <button id='back'>Back</button>
+          <button id='save'>Save</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+  
+</body>
+</html>
