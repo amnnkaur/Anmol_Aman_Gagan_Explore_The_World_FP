@@ -17,8 +17,6 @@
     text-align: center;
     background-image: linear-gradient(to right, #ff5722, #fff);
     color: #666;
-    /* border-radius: 0 2em; */
-    /* box-shadow: 0 5px 15px -5px #00000070; */
   }
   .logo{
     text-align: center;
@@ -29,7 +27,6 @@
     float:left;
     width: 25%;
     margin-bottom: 1%;
-    /* color: #3498db; */
     background-color: #E0FFFF;
   }
   .icon-bar i {
