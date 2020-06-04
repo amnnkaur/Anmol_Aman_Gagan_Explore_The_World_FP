@@ -1,7 +1,7 @@
 
 //signUp Window
 function signUp(){
-    window.open("js/signup.html", "_blank", "width:200 , height:360")
+    window.open("signUp.html", "_blank", "width:200 , height:360")
 }
 
 function formWindow(){
@@ -52,10 +52,19 @@ openRequest.onsuccess = function() {
 function registerUser(){
     // alert('signup')
   let firstname = document.getElementById('name').value;
-  let lastname = document.getElementById('userName').value;
-  let pass = document.getElementById('password').value;
-  let mobile = document.getElementById('mobile').value;
+  let lastname = document.getElementById('lastname').value;
+  let dateOfBirth = document.getElementById('dateOfBirth').value
+  let gender = document.querySelector('input[name="gender"]:checked').value
+  let street = document.getElementById('street').value
+  let city = document.getElementById('city').value
+  let postal = document.getElementById('postcode').value
+  let country = document.getElementById('country').value
+  let email = document.getElementById('email').value
+  let mobile = document.getElementById('mobile').value
+  let personalUrl = document.getElementById('personalURL').value;
   let userName = document.getElementById('userName').value;
+  let pass = document.getElementById('password').value;
+
 
   if(firstname == "" & lastname == "" & pass == ""){
     alert("Please fill the required fields..");
@@ -86,7 +95,16 @@ function registerUser(){
          let newData={
             id: userName,
             name: firstname,
+            lastname: lastname,
+            dateOfBirth: dateOfBirth,
+            gender: gender,
+            street: street,
+            city: city,
+            postCode: postal,
+            country: country,
+            email: email,
             mobile: mobile,
+            personalURL: personalUrl,
             password: pass,
             requests: []
          }
@@ -109,7 +127,6 @@ function registerUser(){
             console.log(req.result)
             console.log(newData);
             alert('Account successfully created!!')
-            // window.location.href = '../login.html'
             window.close();
          };
 
@@ -584,8 +601,8 @@ function showmylist(){
 
                let inforesult = info.result;
 
-               let ln = inforesult.name;
-               let p = inforesult.password;
+               let name = inforesult.name;
+              //  let p = inforesult.password;
                let inforeqs = inforesult.requests;
 
                var code = "";
@@ -595,7 +612,7 @@ function showmylist(){
                code += "<li>" + inforeqs[i] + "</li>"
              }
 
-             document.getElementById('custdetails').innerHTML = "<p><h2 class='text-orange'>Hello, " + p +".<br> Your existing id: " + loginame + "</p>"
+             document.getElementById('custdetails').innerHTML = "<p><h2 class='text-orange'>Hello, " + name +".<br> Your existing id: " + loginame + "</p>"
 
              document.getElementById("userlist").innerHTML = code;
              }
