@@ -584,7 +584,7 @@ function showmylist(){
 
                let inforesult = info.result;
 
-               let ln = inforesult.lastname;
+               let ln = inforesult.name;
                let p = inforesult.password;
                let inforeqs = inforesult.requests;
 
@@ -595,7 +595,7 @@ function showmylist(){
                code += "<li>" + inforeqs[i] + "</li>"
              }
 
-             document.getElementById('custdetails').innerHTML = "Hello, " + loginame +" " + ln;
+             document.getElementById('custdetails').innerHTML = "<p><h2 class='text-orange'>Hello, " + p +".<br> Your existing id: " + loginame + "</p>"
 
              document.getElementById("userlist").innerHTML = code;
              }

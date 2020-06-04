@@ -15,9 +15,10 @@
     margin: 2%;
     padding: 1%;
     text-align: center;
-    background-image: linear-gradient(to right, #e9967a, #4682b4);
-    border-radius: 0 2em;
-    box-shadow: 0 5px 15px -5px #00000070;
+    background-image: linear-gradient(to right, #ff5722, #fff);
+    color: #666;
+    /* border-radius: 0 2em; */
+    /* box-shadow: 0 5px 15px -5px #00000070; */
   }
   .logo{
     text-align: center;
