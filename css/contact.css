@@ -480,7 +480,7 @@ row .col.m6 {
 .center, .center-align {
   text-align: center;
 }
-.white-text {
+.white-text-contact {
   color: #fff !important;
 }
 .orange {
@@ -641,6 +641,39 @@ textarea {
   transition: .4s;
 }
 
+.section-follow {
+  padding-top: 1em;
+  padding-bottom: 1rem;
+  ;
+}
+
+
+.section-follow h2{
+  color: #e95949;
+  font-size: 40px;
+  margin-top: .5em;
+}
+
+.section-follow p{
+  color: #e95949;
+}
+
+.section-follow .fa-4x {
+  margin: 5px 10px;
+}
+
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.white-text {
+  color: #e95949 !important;
+}
+.section-follow a{
+  
+    text-decoration: none;
+
+}
+
 @media only screen and (min-width:688px) {
     .row {
         display: flex;
@@ -706,7 +739,43 @@ textarea {
         text-decoration: none;
         color: #fafafa;
     }
-}
+
+    .section-follow {
+      padding-top: 1em;
+      padding-bottom: 1rem;
+      background-color: #e95949;
+    }
+    
+    
+    .section-follow h2{
+      color: white;
+      font-size: 40px;
+      margin-top: .5em;
+    }
+    
+    .section-follow p{
+      color: white;
+    }
+    
+    .section-follow .fa-4x {
+      margin: 5px 10px;
+    }
+    
+    .svg-inline--fa.fa-w-16 {
+      width: 1em;
+    }
+    .white-text {
+      color: #fff !important;
+    }
+    .section-follow a{
+      
+        text-decoration: none;
+    
+    }
+    
+    
+  }
+
 
 @media only screen and (min-width:884px) {
     .row {
@@ -753,6 +822,42 @@ textarea {
         text-decoration: none;
         color: #fafafa;
     }
+    .section-follow {
+      padding-top: 1em;
+      padding-bottom: 1rem;
+      background-color: #e95949;
+      margin-bottom: 1em;
+    }
+    
+    
+    .section-follow h2{
+      color: white;
+      font-size: 40px;
+      margin-top: .5em;
+    }
+    
+    .section-follow p{
+      color: white;
+    }
+    
+    .section-follow .fa-4x {
+      margin: 5px 10px;
+    }
+    
+    .svg-inline--fa.fa-w-16 {
+      width: 1em;
+    }
+    .white-text {
+      color: #fff !important;
+    }
+    .section-follow a{
+      
+        text-decoration: none;
+    
+    }
+    
+    
+  
 }
 
 @media only screen and (min-width:1031px) {
