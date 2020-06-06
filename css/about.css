@@ -480,7 +480,7 @@ footer a {
 
 .box:after ,.box:before {
   position: absolute;
-  background: #00bcd1;
+  background: #d8bfd8;
   width: 3.5em;
   height: 4.5em;
   border-radius: 50%;
@@ -488,6 +488,14 @@ footer a {
   left: 0.5em;
   transition: all 0.5s ease-in;
   opacity: 0;
+}
+
+.box-green-color:after ,.box-green-color:before {
+    background: #bced91;
+}
+
+.box-orange-color:after, .box-orange-color:before {
+    background: #ff9966;
 }
 
 .box:after {
