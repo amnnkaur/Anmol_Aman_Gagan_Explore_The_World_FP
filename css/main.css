@@ -326,6 +326,7 @@ margin-left: auto;
 left: auto;
 right: auto;
 padding: 0 .75em;
+text-align: center;
 }
 .card-panel {
 padding: 24px;
@@ -361,21 +362,25 @@ width: 20%;
 height: 20%;
 }
 
-.card {
+/* .card {
   position: relative;
   margin: .5rem 0 1rem 0;
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 2px lightslategrey;
-}
+  background-color: transparent;
+  width: 50%;
+  height: 50%;
+  perspective: 1000px;
+} */
 
-.card img {
+/* .flip-card img {
   position: relative;
-  width: 100%;
+  width: 50%;
   height: 50%;
 }
 
-.card .card-title {
+.flip-card .card-title {
   color: #fff;
   position: absolute;
   left: 0;
@@ -384,6 +389,79 @@ height: 20%;
   font-size: 24px;
   font-weight: 300;
   font-family: fantasy;
+}  */
+
+/*
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+} */
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  position: relative;
+  margin: .5rem 0 1rem 0;
+  border-radius: 2px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-image: linear-gradient(to top, #EBBBA7 0%, #CFC7F8 100%);
+  color: #666;
+  text-align: center;
+  font-weight: bold;
+  transform: rotateY(180deg);
 }
 
 .btn, .btn-large, .btn-small {
@@ -445,6 +523,12 @@ height: 20%;
     text-decoration: none;
 
 }
+
+#popular .row{
+  display: inline-grid;
+}
+
+
 
 
 @media only screen and (min-width:688px) {
@@ -550,6 +634,7 @@ row .col {
   left: auto;
   right: auto;
   padding: 0 .75em;
+  text-align: center;
 }
 .card-panel {
   padding: 24px;
@@ -584,7 +669,7 @@ p {
   height: 20%;
 }
 
-.card {
+/* .card {
   position: relative;
   margin: .5rem 0 1rem 0;
   background-color: #fff;
@@ -606,6 +691,10 @@ p {
   font-size: 24px;
   font-weight: 300;
   font-family: fantasy;
+} */
+
+#popular .row{
+  display: inline-grid;
 }
 
 .popular-heading{
@@ -785,6 +874,9 @@ p {
   font-weight: bolder;
 }
 
+#popular .row{
+  display: flex;
+}
 
 /* The dots/bullets/indicators */
 .dot {
