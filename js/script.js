@@ -711,29 +711,51 @@ function loginInfo(){
             let inforesult = info.result;
 
             let name = inforesult.name;
-           //  let p = inforesult.password;
-            // let inforeqs = inforesult.requests;
-
-          //   var code = "";
-
-          // for(var i = 0 ; i < inforeqs.length; i++){
-
-          //   code += "<li>" + inforeqs[i] + "</li>"
-          // }
-
+          
           document.getElementById('loginId').innerHTML = "<p><h2 class='text-orange'>Hello, " + name +",<br>Your existing id: " + loginame + "</p><br><p>Address: "+ inforesult.street
           + ", "+inforesult.city + ", " + ", " + inforesult.country + ", " + inforesult.postCode+"</p><br><p>Mobile: " + inforesult.mobile +"</p><br><p>Email: " + inforesult.email
-          + "</p><br><p>Personal URL: " + inforesult.personalURL + "</p><br> Birth Date: " + inforesult.dateOfBirth
+          + "</p><br><p>Personal URL: " + inforesult.personalURL + "</p><br> Birth Date: " + inforesult.dateOfBirth +"<br><button onclick='logOut()' style='background-color: #ff5722; height: 4em; width: 8em; color: white; border-radius: 2em; border-color: white;'>Logout</button>"
 
-          // document.getElementById("userlist").innerHTML = code;
           }
-
         }
-
    }
       openRequest.onblocked = function() {
      };
+}
+
+function logOut() {
+ 
+
+let openRequest = indexedDB.open("exploreTheWorldDb", 1);
+
+openRequest.onupgradeneeded = function() {
+
+  console.log("upgrade called")
+};
+
+openRequest.onerror = function() {
+
+  console.log("error called")
+
+};
+
+openRequest.onsuccess = function() {
+  let db = openRequest.result;
+
+    console.log("success called")
+
+  db.onversionchange = function() {
+  db.close();
+
+   };
+   let transaction = db.transaction("userdata", "readwrite");
+   let t = transaction.objectStore("userdata");
+
+t.delete("logInUser")
+window.location.href = "index.html"
+}
+ openRequest.onblocked = function() {
+};
 
 
 }
-
