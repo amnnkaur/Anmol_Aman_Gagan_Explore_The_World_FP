@@ -14,46 +14,15 @@
 
   
     <div id="full-page">
-        <div class="nav-class">
-        <header class="container">
-            <h1 class="heading">Explore <span>the world</span></h1>
-        </header>
-    
-        <div class="topnav" id="myTopnav">
-          <a href="index.html" class="active">Home</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-          <div class="dropdown">
-            <button class="dropbtn">Services 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="bookCarForm.html">Car Booking</a>
-              <a href="hotelForm.html">Hotel Booking</a>
-              <a href="ticketform.html">Tickets</a>
-             
-            </div>
-          </div> 
-          <a href="mylist.html">My List</a>
-          <a href="login.html">Login</a>
-          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-        </div>
-        <script>
-          function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-              x.className += " responsive";
-            } else {
-              x.className = "topnav";
-            }
-          }
-          </script>
-    </div>
     <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.desktop {
+  display: inline-block;
 }
 
 #full-page {
@@ -139,7 +108,7 @@
         float: right;
         display: block;
       }
-    
+
     }
     
     @media screen and (max-width: 884px) {
@@ -160,7 +129,11 @@
         display: block;
         width: 100%;
         text-align: left;
-      }}
+      }
+      .desktop {
+        display: none;
+      }
+    }
       
         @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
 * {
@@ -400,13 +373,13 @@ body {
     </style>
 
 <div class='signup-container'>
-    <div class='left-container'>
+    <div class='left-container desktop' >
       <h1>
         <i class='fas fa-car'></i>
         Explore the World
       </h1>
       <div class='form-template-left-container-icon'>
-        <img src='images/tenor.gif'>
+        <img src='https://images.unsplash.com/photo-1523676060187-f55189a71f5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'>
       </div>
     </div>
     <div class='form-template-right-container'>
@@ -417,12 +390,6 @@ body {
             <label for='form-name'>Cab</label>
             <input id='form-name' placeholder="Car name" type='text'>
           </div>
-          <!-- <div class='pets-photo'>
-            <button id='pets-upload'>
-              <i class='fas fa-camera-retro'></i>
-            </button>
-            <label for='pets-upload'>Upload a photo</label>
-          </div> -->
         </div>
         <div class='set'>
           <div class='form-checkIN'>
@@ -476,7 +443,7 @@ body {
       </footer>
     </div>
   </div>
-  <section class="section-follow">
+  <section class="section-follow desktop">
     <div class="container">
       <div class="row">
         <div class="col s12">
