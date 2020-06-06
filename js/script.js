@@ -49,8 +49,8 @@ openRequest.onsuccess = function() {
 };
 }
 
+// register new user
 function registerUser(){
-    // alert('signup')
   let firstname = document.getElementById('name').value;
   let lastname = document.getElementById('lastname').value;
   let dateOfBirth = document.getElementById('dateOfBirth').value
@@ -134,6 +134,7 @@ openRequest.onblocked = function() {
 }
 }
 
+// logging in the user
 function userlogIn(){
 
   let userName = document.getElementById('userName').value;
@@ -211,9 +212,8 @@ function userlogIn(){
 }
 
 
+// save logged in user in database
 function saveLoginUser(userName){
-
-
 let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 openRequest.onupgradeneeded = function() {
 
@@ -259,8 +259,9 @@ openRequest.onblocked = function() {
 };
 
 
-}//end of function
+}
 
+// hotel booking
 function hotelBooking(){
    
    let openRequest = indexedDB.open("exploreTheWorldDb", 1);
@@ -371,6 +372,7 @@ function hotelBooking(){
       };
 }
 
+// car booking
 function carBooking(){
 
     let openRequest = indexedDB.open("exploreTheWorldDb", 1);
@@ -481,6 +483,7 @@ function carBooking(){
     };
 }
 
+//air ticket booking 
 function airTicketsBooking(){
 
 let openRequest = indexedDB.open("exploreTheWorldDb", 1);
@@ -594,6 +597,8 @@ let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
 }
 
+
+// My list page functionality
 function showmylist(){
 
 
@@ -664,7 +669,7 @@ function showmylist(){
 
 }
 
-
+// Dynamic log in page with login Info and logout button
 function loginInfo(){
 
 
@@ -723,6 +728,7 @@ function loginInfo(){
      };
 }
 
+// Logout button
 function logOut() {
  
 
@@ -758,4 +764,114 @@ window.location.href = "index.html"
 };
 
 
+}
+
+// Contact page message submition
+function submitContactPageMessage(){
+  // alert('Submit is pressed')
+
+let openRequest = indexedDB.open("exploreTheWorldDb", 1);
+
+openRequest.onupgradeneeded = function() {
+
+  console.log("upgrade called")
+};
+
+openRequest.onerror = function() {
+
+  console.log("error called")
+
+};
+
+let formName = document.getElementById('nameConatctPageForm').value
+let formEmail = document.getElementById('emailConatctPageForm').value
+let formContact = document.getElementById('phoneConatctPageForm').value
+let formMessage = document.getElementById('messageConatctPageForm').value
+
+openRequest.onsuccess = function() {
+  let db = openRequest.result;
+
+    console.log("success called")
+
+  db.onversionchange = function() {
+  db.close();
+
+   };
+   let transaction = db.transaction("userdata", "readwrite");
+   let t = transaction.objectStore("userdata");
+
+
+   let r = t.get("logInUser");
+
+
+   r.onsuccess = function(){
+     let reslt = r.result;
+
+     if(reslt == null){
+       alert("User not registered!!");
+     }else {
+
+
+     let loginame = reslt.username;
+     console.log(loginame);
+
+     let info = t.get(loginame);
+     info.onsuccess = function(){
+
+       let inforesult = info.result;
+
+      
+       let firstname = inforesult.name;
+       let lastname = inforesult.lastname;
+       let dateOfBirth = inforesult.dateOfBirth;
+       let gender = inforesult.gender;
+       let street = inforesult.street;
+       let city = inforesult.city;
+       let postal = inforesult.postCode;
+       let country = inforesult.country;
+       let email = inforesult.email;
+       let personalUrl = inforesult.personalURL;
+       let pass = inforesult.password;
+       let mobile = inforesult.mobile
+       let inforeqs = inforesult.requests;
+
+
+         inforeqs.push("<h4>Message: </h4>" + formMessage + "<br><h4> Your provided email and contact info:</h4><br> " + formEmail +"<br>" + formContact);
+
+       let Newdata={
+
+        id: loginame,
+        name: firstname,
+        lastname: lastname,
+        dateOfBirth: dateOfBirth,
+        gender: gender,
+        street: street,
+        city: city,
+        postCode: postal,
+        country: country,
+        email: email,
+        mobile: mobile,
+        personalURL: personalUrl,
+        password: pass,
+          requests: inforeqs
+
+       }
+       let req = t.put(Newdata);
+
+       req.onsuccess = function() {
+         alert("Message submitted")
+          window.location.href ='contact.html'
+          console.log(req.result)
+          console.log(Newdata);
+
+       };
+       req.onerror = function() {
+                   console.log("Error", request.error);
+            } 
+          }
+      }
+   }
+}
+ openRequest.onblocked = function() {
+};
 }
