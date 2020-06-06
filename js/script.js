@@ -109,15 +109,6 @@ function registerUser(){
             requests: []
          }
 
-        //  let data={
-        //     id: firstname,
-        //     lastname: lastname,
-        //     password: pass,
-        //     requests: []
-
-
-        //  }
-
 
          let req = t.add(newData);
 
@@ -139,14 +130,6 @@ function registerUser(){
 openRequest.onblocked = function() {
 
 };
-// document.getElementById('fname').value = ""
-// document.getElementById('lname').value = ""
-// document.getElementById('passwordsignup').value = ""
-// var x = document.getElementById("msg");
-// x.className = "show";
-// setTimeout(function() {
-//   x.className.replace("show", "");
-// }, 30000);
 
 }
 }
@@ -333,6 +316,15 @@ function hotelBooking(){
              let inforesult = info.result;
 
              let firstname = inforesult.name;
+             let lastname = inforesult.lastname;
+             let dateOfBirth = inforesult.dateOfBirth;
+             let gender = inforesult.gender;
+             let street = inforesult.street;
+             let city = inforesult.city;
+             let postal = inforesult.postCode;
+             let country = inforesult.country;
+             let email = inforesult.email;
+             let personalUrl = inforesult.personalURL;
              let pass = inforesult.password;
              let mobile = inforesult.mobile
              let inforeqs = inforesult.requests;
@@ -343,10 +335,19 @@ function hotelBooking(){
 
              let Newdata={
 
-                id: loginame,
-                name: firstname,
-                mobile: mobile,
-                password: pass,
+              id: loginame,
+              name: firstname,
+              lastname: lastname,
+              dateOfBirth: dateOfBirth,
+              gender: gender,
+              street: street,
+              city: city,
+              postCode: postal,
+              country: country,
+              email: email,
+              mobile: mobile,
+              personalURL: personalUrl,
+              password: pass,
                 requests: inforeqs
 
              }
@@ -425,6 +426,15 @@ function carBooking(){
            let inforesult = info.result;
 
            let firstname = inforesult.name;
+           let lastname = inforesult.lastname;
+           let dateOfBirth = inforesult.dateOfBirth;
+           let gender = inforesult.gender;
+           let street = inforesult.street;
+           let city = inforesult.city;
+           let postal = inforesult.postCode;
+           let country = inforesult.country;
+           let email = inforesult.email;
+           let personalUrl = inforesult.personalURL;
            let pass = inforesult.password;
            let mobile = inforesult.mobile
            let inforeqs = inforesult.requests;
@@ -435,10 +445,19 @@ function carBooking(){
 
            let Newdata={
 
-              id: loginame,
-              name: firstname,
-              mobile: mobile,
-              password: pass,
+            id: loginame,
+            name: firstname,
+            lastname: lastname,
+            dateOfBirth: dateOfBirth,
+            gender: gender,
+            street: street,
+            city: city,
+            postCode: postal,
+            country: country,
+            email: email,
+            mobile: mobile,
+            personalURL: personalUrl,
+            password: pass,
               requests: inforeqs
 
            }
@@ -516,7 +535,17 @@ let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
              let inforesult = info.result;
 
+            
              let firstname = inforesult.name;
+             let lastname = inforesult.lastname;
+             let dateOfBirth = inforesult.dateOfBirth;
+             let gender = inforesult.gender;
+             let street = inforesult.street;
+             let city = inforesult.city;
+             let postal = inforesult.postCode;
+             let country = inforesult.country;
+             let email = inforesult.email;
+             let personalUrl = inforesult.personalURL;
              let pass = inforesult.password;
              let mobile = inforesult.mobile
              let inforeqs = inforesult.requests;
@@ -527,10 +556,19 @@ let openRequest = indexedDB.open("exploreTheWorldDb", 1);
 
              let Newdata={
 
-                id: loginame,
-                name: firstname,
-                mobile: mobile,
-                password: pass,
+              id: loginame,
+              name: firstname,
+              lastname: lastname,
+              dateOfBirth: dateOfBirth,
+              gender: gender,
+              street: street,
+              city: city,
+              postCode: postal,
+              country: country,
+              email: email,
+              mobile: mobile,
+              personalURL: personalUrl,
+              password: pass,
                 requests: inforeqs
 
              }

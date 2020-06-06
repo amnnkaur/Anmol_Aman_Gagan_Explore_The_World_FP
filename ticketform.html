@@ -11,41 +11,6 @@
 <body>
 
   <div id="full-page">
-    <div class="nav-class">
-    <header class="container">
-        <h1 class="heading">Explore <span>the world</span></h1>
-    </header>
-
-    <div class="topnav" id="myTopnav">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <div class="dropdown">
-        <button class="dropbtn">Services 
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="bookCarForm.html">Car Booking</a>
-          <a href="hotelForm.html">Hotel Booking</a>
-          <a href="ticketform.html">Tickets</a>
-         
-        </div>
-      </div> 
-      <a href="mylist.html">My List</a>
-      <a href="login.html">Login</a>
-      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-    </div>
-    <script>
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-      </script>
-</div>
     <style>
       * {
     margin: 0;
@@ -127,7 +92,10 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
-    
+    .desktop {
+        display: inline-block;
+      }
+
     @media screen and (max-width: 688px) {
       .topnav a:not(:first-child), .dropdown .dropbtn {
         display: none;
@@ -157,7 +125,13 @@
         display: block;
         width: 100%;
         text-align: left;
-      }}
+      }
+    
+      .desktop {
+        display: none;
+      }
+
+    }
         @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
 * {
   box-sizing: border-box;
@@ -404,7 +378,7 @@ body {
     </style>
 
 <div class='signup-container'>
-    <div class='left-container'>
+    <div class='left-container desktop'>
       <h1>
         <i class='fas fa-plane'></i>
         Explore the World
@@ -484,7 +458,7 @@ body {
 
 
 
-  <section class="section-follow">
+  <section class="section-follow desktop">
     <div class="container">
       <div class="follow-row">
         <div class="col s12">
